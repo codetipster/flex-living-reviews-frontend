@@ -3,7 +3,7 @@ import React, { useCallback, useMemo } from 'react';
 import { reviewsService } from '@/services/api/reviews.service';
 import { useReviewsStore, useReviewsActions } from '@/store/reviews.store';
 import { CACHE_TTL } from '@/constants/api';
-import type { ReviewFilters, Pagination, ApprovalRequest } from '@/types/api';
+import type { ReviewFilters, Pagination } from '@/types/api';
 
 // Query keys for React Query
 export const QUERY_KEYS = {
