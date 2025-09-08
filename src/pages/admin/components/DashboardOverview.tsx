@@ -1,13 +1,11 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
   Star, 
-  TrendingUp, 
-  MessageSquare, 
-  Building2,
+  MessageSquare,
   Users,
   Award,
   AlertTriangle,

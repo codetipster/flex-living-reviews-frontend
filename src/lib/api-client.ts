@@ -1,4 +1,4 @@
-import { API_CONFIG, API_ENDPOINTS, HTTP_METHODS, REQUEST_HEADERS, CONTENT_TYPES, ERROR_CODES } from '@/constants/api';
+import { API_CONFIG, HTTP_METHODS, REQUEST_HEADERS, CONTENT_TYPES, ERROR_CODES } from '@/constants/api';
 import type { ApiResponse, ApiError, NetworkError } from '@/types/api';
 
 // Request configuration interface

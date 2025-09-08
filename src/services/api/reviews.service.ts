@@ -5,7 +5,7 @@ import type {
   PublicReviewsResponse,
   ReviewFilters,
   Pagination,
-  ApprovalRequest,
+  // ApprovalRequest,
   SyncResponse,
   ReviewEntity,
 } from '@/types/api';

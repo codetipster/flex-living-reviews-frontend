@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Header } from "./components/Header";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Star, MapPin, Users, Search, Filter, ArrowRight } from "lucide-react";
+import { Star, MapPin, Users, Search, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Property {

@@ -72,7 +72,7 @@ export const useReviewApproval = () => {
   
   const approveMutation = useMutation({
     mutationFn: (reviewId: string) => reviewsService.approveReview(reviewId),
-    onSuccess: (data, reviewId) => {
+    onSuccess: (_, reviewId) => {
       // Update local state
       actions.updateReviewApproval(reviewId, true);
       
@@ -87,7 +87,7 @@ export const useReviewApproval = () => {
   
   const removeApprovalMutation = useMutation({
     mutationFn: (reviewId: string) => reviewsService.removeApproval(reviewId),
-    onSuccess: (data, reviewId) => {
+    onSuccess: (_, reviewId) => {
       // Update local state
       actions.updateReviewApproval(reviewId, false);
       

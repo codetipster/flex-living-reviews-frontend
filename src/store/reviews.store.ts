@@ -2,10 +2,10 @@ import { create } from 'zustand';
 import { devtools, subscribeWithSelector } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 import type {
-  ReviewEntity,
+  // ReviewEntity,
   ReviewFilters,
   Pagination,
-  PropertyAnalytics,
+  // PropertyAnalytics,
   DashboardResponse,
   PublicReviewsResponse,
 } from '@/types/api';
@@ -105,7 +105,7 @@ const initialState = {
 export const useReviewsStore = create<ReviewsState>()(
   devtools(
     subscribeWithSelector(
-      immer((set, get) => ({
+      immer((set) => ({
         ...initialState,
         
         actions: {

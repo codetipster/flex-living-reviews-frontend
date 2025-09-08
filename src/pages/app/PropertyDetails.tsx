@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+// import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, Wifi, Car, Coffee, Dumbbell, Utensils, Waves, Mountain, Users, MessageSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -173,14 +173,14 @@ export function PropertyDetail() {
     ));
   };
 
-  const getCategoryLabel = (category: string) => {
-    const labels: Record<string, string> = {
-      cleanliness: "Cleanliness",
-      communication: "Communication", 
-      respect_house_rules: "House Rules"
-    };
-    return labels[category] || category;
-  };
+  // const getCategoryLabel = (category: string) => {
+  //   const labels: Record<string, string> = {
+  //     cleanliness: "Cleanliness",
+  //     communication: "Communication", 
+  //     respect_house_rules: "House Rules"
+  //   };
+  //   return labels[category] || category;
+  // };
 
   if (!property) {
     return (
