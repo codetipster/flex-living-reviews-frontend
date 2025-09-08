@@ -7,6 +7,7 @@ import { Star, Wifi, Car, Coffee, Dumbbell, Utensils, Waves, Mountain, Users, Me
 import { cn } from "@/lib/utils";
 import { Header } from "./components/Header";
 import { BookingCard } from "./components/BookingCard";
+import { reviewsService } from "@/services/api/reviews.service";
 import { StayPolicy } from "./components/StayPolicy";
 
 interface Property {
@@ -135,24 +136,15 @@ export function PropertyDetail() {
       try {
         if (!propertyName) return;
         
-        console.log('🔍 Fetching reviews for property:', propertyName);
-        const response = await fetch(`http://localhost:3001/api/public/reviews/${encodeURIComponent(propertyName)}`);
-        const data = await response.json();
-        
-        console.log('📡 Raw API Response:', data);
-        console.log('📊 Response Status:', response.status);
-        console.log('✅ Success:', data.success);
-        
-        if (data.success) {
-          console.log('📝 Reviews Data:', data.data);
-          console.log('📋 Reviews Array:', data.data.reviews);
-          console.log('🔢 Number of Reviews:', data.data.reviews?.length || 0);
-          setReviews(data.data.reviews || []);
-        } else {
-          console.log('❌ API Error:', data.message);
-        }
+        const data = await reviewsService.getPublicReviews(propertyName);
+        const mappedReviews = (data.reviews || []).map(review => ({
+          ...review,
+          date: typeof review.submittedAt === 'string' ? review.submittedAt : new Date().toISOString(),
+          submittedAt: typeof review.submittedAt === 'string' ? review.submittedAt : new Date().toISOString()
+        }));
+        setReviews(mappedReviews);
       } catch (error) {
-        console.error('💥 Error fetching reviews:', error);
+        console.error('Error fetching reviews:', error);
       } finally {
         setLoading(false);
       }
